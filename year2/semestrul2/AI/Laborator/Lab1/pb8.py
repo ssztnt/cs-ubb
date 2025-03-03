@@ -1,9 +1,14 @@
+# Complexitate timp: O(n)
+# Complexitate memorie: O(n)
+
 def generate_binary_numbers(n):
     binary_numbers = []
     for i in range(1, n + 1):
         binary_numbers.append(bin(i)[2:])  # Eliminăm prefixul '0b'
     return binary_numbers
 
+# Complexitate timp: O(n)
+# Complexitate memorie: O(n)
 def generate_binary_numbers_optimized(n):
     binary_numbers = []
     for i in range(1, n + 1):

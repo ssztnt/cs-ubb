@@ -1,3 +1,5 @@
+# Complexitate timp: O(n)
+# Complexitate memorie: O(n)
 def cuvinte_care_apar_doar_o_data(text):
     """
     Returneaza o lista cu cuvintele care apar o singura data in text.
@@ -10,6 +12,8 @@ def cuvinte_care_apar_doar_o_data(text):
         else:
             aparitii[cuvant] = 1
     return [cuvant for cuvant in aparitii if aparitii[cuvant] == 1]
+# Complexitate timp: O(n)
+# Complexitate memorie: O(n)
 
 def cuvinte_unice(text):
     # Împarte textul în cuvinte

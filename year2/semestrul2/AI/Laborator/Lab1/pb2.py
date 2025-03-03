@@ -1,5 +1,7 @@
 import math
 
+#Complexitatea timp: O(1)
+#Complexitatea memorie: O(1)
 
 def distanta_euclidiana(punct1, punct2):
     # Extrage coordonatele
@@ -15,7 +17,8 @@ def distanta_euclidiana(punct1, punct2):
     
     return distanta
 
-#ai
+#Complexitatea timp: O(1)
+#Complexitatea memorie: O(1)
 def distanta_euclidiana_optimizata(punct1, punct2):
     # Calculează distanța Euclideană
     distanta = math.sqrt((punct2[0] - punct1[0])**2 + (punct2[1] - punct1[1])**2)
@@ -41,3 +44,9 @@ elif optiune == '2':
     punct2 = tuple(map(float, input("Introduceți coordonatele celui de-al doilea punct (x, y): ").split()))
     print(f"Distanța Euclideană (optimizat) este: {distanta_euclidiana_optimizata(punct1, punct2)}")
 
+    assert distanta_euclidiana((0, 0), (3, 4)) == 5.0
+    assert distanta_euclidiana((0, 0), (1, 1)) == math.sqrt(2)
+    assert distanta_euclidiana_optimizata((0, 0), (3, 4)) == 5.0
+    assert distanta_euclidiana_optimizata((0, 0), (1, 1)) == math.sqrt(2)
+
+meniu()

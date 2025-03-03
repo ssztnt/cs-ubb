@@ -1,3 +1,5 @@
+# Complexitate timp: O(n)
+# Complexitate memorie: O(1)
 def ultimul_cuvant_lexical(sir):
     cuvinte = sir.split() # split() returneaza o lista de cuvinte
     cuvinte.sort() # sort() sorteaza lista de cuvinte 
@@ -5,7 +7,8 @@ def ultimul_cuvant_lexical(sir):
 
 
 
-#ai
+# Complexitate timp: O(n)ß
+# Complexitate memorie: O(1)
 def ultimul_cuvant_alfabetic(text):
     # Împarte textul în cuvinte
     cuvinte = text.split()

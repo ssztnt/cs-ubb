@@ -1,3 +1,5 @@
+# Complexitate timp: O(n)
+# Complexitate memorie: O(1)
 def find_duplicate(arr):
     n = len(arr)
     expected_sum = (n - 1) * n // 2
@@ -6,6 +8,8 @@ def find_duplicate(arr):
 
 
 
+#Complexitate timp: O(n)
+#Complexitate memorie: O(1)
 
 def gaseste_valoarea_repetata(sir):
     n = len(sir)

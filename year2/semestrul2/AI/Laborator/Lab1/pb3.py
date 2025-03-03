@@ -1,9 +1,12 @@
+#Complexitate timp: O(n)
+#Complexitate memorie: O(1)
 def produs_scalar(vector , vector2):
     suma = 0
     for i in range(len(vector)):
         suma += vector[i] * vector2[i]
     return suma
-
+#Complexitate timp: O(n)
+#Complexitate memorie: O(1)
 def produs_scalar_optimizat(vector1, vector2):
     # Reprezentăm vectorii rari ca dicționare: {index: valoare}
     sparse1 = {i: val for i, val in enumerate(vector1) if val != 0}
@@ -37,5 +40,10 @@ elif optiune == '2':
     print(f"Produsul scalar (optimizat) este: {produs_scalar_optimizat(vector1, vector2)}")
 else:
     print("Opțiune invalidă")
+
+    assert produs_scalar([1, 2, 3], [4, 5, 6]) == 32
+    assert produs_scalar([1, 2, 3], [0, 0, 0]) == 0
+    assert produs_scalar_optimizat([1, 2, 3], [4, 5, 6]) == 32
+    assert produs_scalar_optimizat([1, 2, 3], [0, 0, 0]) == 0
 #complexitate prima : O(n)
 #complexitate a doua : O(n)

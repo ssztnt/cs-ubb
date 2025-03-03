@@ -1,4 +1,6 @@
 import heapq
+# Complexitate timp: O(nlogk)
+# Complexitate memorie: O(k)
 
 def find_kth_largest(nums, k):
     # Folosim un min-heap pentru a menține cele mai mari k elemente
@@ -9,6 +11,8 @@ def find_kth_largest(nums, k):
             heapq.heappop(min_heap)  # Eliminăm cel mai mic element din heap
     return min_heap[0]  # Rădăcina heap-ului este al k-lea cel mai mare element
 
+# Complexitate timp: O(nlogn)
+# Complexitate memorie: O(n)
 def find_kth_biggest(nums , k):
     return sorted(nums)[-k] # Sortăm șirul și returnăm al k-lea cel mai mare element
 
@@ -35,5 +39,11 @@ def meniu():
 
     else:
         print("Opțiune invalidă! Te rog să alegi 1 sau 2.")
+
+    
+    assert find_kth_largest([3, 2, 1, 5, 6, 4], 2) == 5
+    assert find_kth_largest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4) == 4
+    assert find_kth_biggest([3, 2, 1, 5, 6, 4], 2) == 5
+    assert find_kth_biggest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4) == 4
 
 meniu()
