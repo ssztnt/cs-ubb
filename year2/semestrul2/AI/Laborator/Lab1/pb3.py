@@ -1,5 +1,7 @@
 #Complexitate timp: O(n)
 #Complexitate memorie: O(1)
+# parametrii de intrare : vector - lista de numere
+# return : produsul scalar al celor doua vectori
 def produs_scalar(vector , vector2):
     suma = 0
     for i in range(len(vector)):
@@ -7,6 +9,9 @@ def produs_scalar(vector , vector2):
     return suma
 #Complexitate timp: O(n)
 #Complexitate memorie: O(1)
+# parametrii de intrare : vector1 - lista de numere
+# parametrii de intrare : vector2 - lista de numere
+# return : produsul scalar al celor doua vectori
 def produs_scalar_optimizat(vector1, vector2):
     # Reprezentăm vectorii rari ca dicționare: {index: valoare}
     sparse1 = {i: val for i, val in enumerate(vector1) if val != 0}

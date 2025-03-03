@@ -1,5 +1,8 @@
 # Complexitate timp: O(n)
 # Complexitate memorie: O(1)
+# parametri intrare : sir - sir de caractere
+# return : ultimul cuvant lexical din sir
+
 def ultimul_cuvant_lexical(sir):
     cuvinte = sir.split() # split() returneaza o lista de cuvinte
     cuvinte.sort() # sort() sorteaza lista de cuvinte 
@@ -9,6 +12,8 @@ def ultimul_cuvant_lexical(sir):
 
 # Complexitate timp: O(n)ß
 # Complexitate memorie: O(1)
+# parametri intrare : text - sir de caractere 
+# return : ultimul cuvant alfabetic din sir
 def ultimul_cuvant_alfabetic(text):
     # Împarte textul în cuvinte
     cuvinte = text.split()
@@ -39,6 +44,11 @@ elif optiune == '2':
     print(f"Ultimul cuvânt (alfabetic) este: {ultimul_cuvant_alfabetic(text)}")
 else:
     print("Opțiune invalidă")
+
+    assert ultimul_cuvant_lexical("ana are mere rosii") == "rosii"
+    assert ultimul_cuvant_lexical("ana are mere rosii si galbene") == "si"
+    assert ultimul_cuvant_alfabetic("ana are mere rosii") == "rosii"
+    assert ultimul_cuvant_alfabetic("ana are mere rosii si galbene") == "si"
 
 
 #complexitate prima : O(n log n)

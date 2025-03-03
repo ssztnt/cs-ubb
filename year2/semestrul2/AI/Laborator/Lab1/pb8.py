@@ -1,6 +1,8 @@
 # Complexitate timp: O(n)
 # Complexitate memorie: O(n)
 
+# parametri intrare : n - numar natural
+# return : lista de numere binare de la 1 la n
 def generate_binary_numbers(n):
     binary_numbers = []
     for i in range(1, n + 1):
@@ -9,6 +11,8 @@ def generate_binary_numbers(n):
 
 # Complexitate timp: O(n)
 # Complexitate memorie: O(n)
+# parametri intrare : n - numar natural
+# return : lista de numere binare de la 1 la n
 def generate_binary_numbers_optimized(n):
     binary_numbers = []
     for i in range(1, n + 1):
@@ -30,4 +34,9 @@ def menu():
         return
     else:
         print("Invalid option")
+
+    assert generate_binary_numbers(5) == ['1', '10', '11', '100', '101']
+    assert generate_binary_numbers(10) == ['1', '10', '11', '100', '101', '110', '111', '1000', '1001', '1010']
+    assert generate_binary_numbers_optimized(5) == ['1', '10', '11', '100', '101']
+    assert generate_binary_numbers_optimized(10) == ['1', '10', '11', '100', '101', '110', '111', '1000', '1001', '1010']
 menu()

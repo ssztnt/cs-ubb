@@ -1,7 +1,9 @@
 import heapq
 # Complexitate timp: O(nlogk)
 # Complexitate memorie: O(k)
-
+# parametri intrare : nums - lista de numere
+#                     k - numar natural
+# return : al k-lea cel mai mare element din lista
 def find_kth_largest(nums, k):
     # Folosim un min-heap pentru a menține cele mai mari k elemente
     min_heap = []
@@ -13,6 +15,7 @@ def find_kth_largest(nums, k):
 
 # Complexitate timp: O(nlogn)
 # Complexitate memorie: O(n)
+# la fel ca mai sus 
 def find_kth_biggest(nums , k):
     return sorted(nums)[-k] # Sortăm șirul și returnăm al k-lea cel mai mare element
 

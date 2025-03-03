@@ -1,5 +1,7 @@
 # Complexitate timp: O(n)
 # Complexitate memorie: O(1)
+# parametrii de intrare : arr - lista de numere
+# return : elementul care se repeta in lista
 def find_duplicate(arr):
     n = len(arr)
     expected_sum = (n - 1) * n // 2
@@ -10,6 +12,8 @@ def find_duplicate(arr):
 
 #Complexitate timp: O(n)
 #Complexitate memorie: O(1)
+# parametrii de intrare : sir - lista de numere
+# return : elementul care se repeta in lista
 
 def gaseste_valoarea_repetata(sir):
     n = len(sir)
@@ -56,5 +60,9 @@ def meniu():
         else:
             print("Opțiune invalidă! Te rog să alegi 1, 2 sau 3.")
 
+        assert find_duplicate([1, 2, 3, 4, 4, 5]) == 4
+        assert find_duplicate([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]) == 10
+        assert gaseste_valoarea_repetata([1, 2, 3, 4, 4, 5]) == 4
+        assert gaseste_valoarea_repetata([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]) == 10
 # Pornim meniul
 meniu()

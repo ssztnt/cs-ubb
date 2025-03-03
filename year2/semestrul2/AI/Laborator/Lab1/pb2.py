@@ -3,6 +3,9 @@ import math
 #Complexitatea timp: O(1)
 #Complexitatea memorie: O(1)
 
+# parametrii de intrare : punct1 - tuplu de două numere reale
+# parametrii de intrare : punct2 - tuplu de două numere reale
+# return : distanța Euclideană dintre cele două puncte
 def distanta_euclidiana(punct1, punct2):
     # Extrage coordonatele
     x1, y1 = punct1
@@ -19,6 +22,7 @@ def distanta_euclidiana(punct1, punct2):
 
 #Complexitatea timp: O(1)
 #Complexitatea memorie: O(1)
+# la fel 
 def distanta_euclidiana_optimizata(punct1, punct2):
     # Calculează distanța Euclideană
     distanta = math.sqrt((punct2[0] - punct1[0])**2 + (punct2[1] - punct1[1])**2)

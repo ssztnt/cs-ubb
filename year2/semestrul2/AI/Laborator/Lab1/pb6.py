@@ -1,6 +1,9 @@
 
 # Complexitate timp: O(n)
 # Complexitate memorie: O(1)
+# parametrii de intrare : nums - lista de numere
+# return : elementul majoritar din lista
+
 def find_majority_elemenet(nums):
     count = 0
     candidate = None
@@ -19,6 +22,8 @@ def find_majority_elemenet(nums):
     return candidate if count > len(nums) // 2 else None
 #Complexitate timp: O(nlogn)
 #Complexitate memorie: O(1)
+# parametrii de intrare : nums - lista de numere
+# return : elementul majoritar din lista
 def find_majority_element(nums):
     nums.sort()  # Sortăm șirul
     n = len(nums)
@@ -65,5 +70,9 @@ def main():
         elif optiune == "3":
             print("Ieșire din program. La revedere!")
             break
-
+        
+        assert find_majority_elemenet([1, 2, 3, 4, 4, 5]) == 4
+        assert find_majority_elemenet([1, 2, 3, 4, 5]) == None
+        assert find_majority_element([1, 2, 3, 4, 4, 5]) == 4
+        assert find_majority_element([1, 2, 3, 4, 5]) == None
 main()
