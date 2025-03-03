@@ -55,9 +55,9 @@ while optiune != "3":
         print(cuvinte_unice(text))
     optiune = meniu()
 
-    assert cuvinte_care_apar_doar_o_data("ana are mere si pere si mere") == ["ana"]
-    assert cuvinte_care_apar_doar_o_data("ana are mere si pere si mere si pere") == ["ana"]
-    assert cuvinte_unice("ana are mere si pere si mere") == ["ana"]
-    assert cuvinte_unice("ana are mere si pere si mere si pere") == ["ana"]
+assert cuvinte_care_apar_doar_o_data("ana are mere si pere si mere") == ["ana"]
+assert cuvinte_care_apar_doar_o_data("ana are mere si pere si mere si pere") == ["ana"]
+assert cuvinte_unice("ana are mere si pere si mere") == ["ana"]
+assert cuvinte_unice("ana are mere si pere si mere si pere") == ["ana"]
 
 print("La revedere!")

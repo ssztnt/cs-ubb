@@ -46,9 +46,9 @@ elif optiune == '2':
 else:
     print("Opțiune invalidă")
 
-    assert produs_scalar([1, 2, 3], [4, 5, 6]) == 32
-    assert produs_scalar([1, 2, 3], [0, 0, 0]) == 0
-    assert produs_scalar_optimizat([1, 2, 3], [4, 5, 6]) == 32
-    assert produs_scalar_optimizat([1, 2, 3], [0, 0, 0]) == 0
+assert produs_scalar([1, 2, 3], [4, 5, 6]) == 32
+assert produs_scalar([1, 2, 3], [0, 0, 0]) == 0
+assert produs_scalar_optimizat([1, 2, 3], [4, 5, 6]) == 32
+assert produs_scalar_optimizat([1, 2, 3], [0, 0, 0]) == 0
 #complexitate prima : O(n)
 #complexitate a doua : O(n)

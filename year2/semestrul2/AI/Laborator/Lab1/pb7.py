@@ -14,7 +14,7 @@ def find_kth_largest(nums, k):
     return min_heap[0]  # Rădăcina heap-ului este al k-lea cel mai mare element
 
 # Complexitate timp: O(nlogn)
-# Complexitate memorie: O(n)
+# Complexitate memorie: O(1)
 # la fel ca mai sus 
 def find_kth_biggest(nums , k):
     return sorted(nums)[-k] # Sortăm șirul și returnăm al k-lea cel mai mare element

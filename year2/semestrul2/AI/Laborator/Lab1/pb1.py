@@ -1,4 +1,4 @@
-# Complexitate timp: O(n)
+# Complexitate timp: O(nlogn)
 # Complexitate memorie: O(1)
 # parametri intrare : sir - sir de caractere
 # return : ultimul cuvant lexical din sir
@@ -10,7 +10,7 @@ def ultimul_cuvant_lexical(sir):
 
 
 
-# Complexitate timp: O(n)ß
+# Complexitate timp: O(n)
 # Complexitate memorie: O(1)
 # parametri intrare : text - sir de caractere 
 # return : ultimul cuvant alfabetic din sir
@@ -45,11 +45,11 @@ elif optiune == '2':
 else:
     print("Opțiune invalidă")
 
-    assert ultimul_cuvant_lexical("ana are mere rosii") == "rosii"
-    assert ultimul_cuvant_lexical("ana are mere rosii si galbene") == "si"
-    assert ultimul_cuvant_alfabetic("ana are mere rosii") == "rosii"
-    assert ultimul_cuvant_alfabetic("ana are mere rosii si galbene") == "si"
+assert ultimul_cuvant_lexical("ana are mere rosii") == "rosii"
+assert ultimul_cuvant_lexical("ana are mere rosii si galbene") == "si"
+assert ultimul_cuvant_alfabetic("ana are mere rosii") == "rosii"
+assert ultimul_cuvant_alfabetic("ana are mere rosii si galbene") == "si"
 
-
+meniu()
 #complexitate prima : O(n log n)
 #complexitate a doua : O(n) 
