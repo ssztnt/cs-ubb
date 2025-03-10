@@ -1,7 +1,7 @@
 import csv
 
 # Citirea fișierului CSV
-file_path = '/Users/plaiurares/cs-ubb/year2/semestrul2/AI/Laborator/Lab2/surveyDataSience.csv'
+file_path = '/year2/semestrul2/AI/Laborator/Lab2/data/surveyDataSience.csv'
 
 
 def read_csv(file_path):
