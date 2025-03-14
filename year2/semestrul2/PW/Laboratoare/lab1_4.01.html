@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+    <meta lang="ro">
+    <meta charset="UTF-8">
+    <meta viewport="width=device-width, initial-scale=1.0">
+    <title>Formular de completare pentru avioane</title>
+</head>
+
+<body bgcolor="#f0f0f0">
+    <center>
+        <h1>
+            <b>
+                Formular de completare pentru avioane
+            </b>
+        </h1>
+    </center>
+
+    <form action="/submit" method="post">
+        <fieldset>
+            <legend><strong>Detalii Avion</strong></legend>
+            <table border="1" width="100%">
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#d3d3d3"><b>Detalii Avion</b></td>
+                </tr>
+                <tr>
+                    <td>Model:</td>
+                    <td><input type="text" name="model" size="30" maxlength="50"></td>
+                </tr>
+                <tr>
+                    <td>Producător:</td>
+                    <td><input type="text" name="producator" size="30" maxlength="50"></td>
+                </tr>
+                <tr>
+                    <td>An fabricație:</td>
+                    <td><input type="text" name="an_fabricatie" size="4" maxlength="4"></td>
+                </tr>
+                <tr>
+                    <td>Tip avion:</td>
+                    <td>
+                        <input type="radio" name="tip_avion" value="pasageri"> Pasageri
+                        <input type="radio" name="tip_avion" value="cargo"> Cargo
+                    </td>
+                </tr>
+                <tr>
+                    <td>Capacitate:</td>
+                    <td><input type="text" name="capacitate" size="10" maxlength="10"></td>
+                </tr>
+                <tr>
+                    <td>Companie aeriană:</td>
+                    <td><input type="text" name="companie_aeriana" size="30" maxlength="50"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend><strong>Caracteristici Tehnice</strong></legend>
+            <table border="1" width="100%">
+                <tr>
+                    <td>Număr motoare:</td>
+                    <td><input type="text" name="numar_motoare" size="2" maxlength="2"></td>
+                </tr>
+                <tr>
+                    <td>Tip combustibil:</td>
+                    <td>
+                        <select name="tip_combustibil">
+                            <option value="kerosen">Kerosen</option>
+                            <option value="benzina">Benzină</option>
+                            <option value="diesel">Diesel</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Autonomie zbor:</td>
+                    <td><input type="text" name="autonomie_zbor" size="10" maxlength="10"></td>
+                </tr>
+                <tr>
+                    <td>Comentarii:</td>
+                    <td><textarea name="comentarii" cols="30" rows="4"></textarea></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend><strong>Dotări</strong></legend>
+            <table border="1" width="100%">
+                <tr>
+                    <td>Wi-Fi:</td>
+                    <td><input type="checkbox" name="wifi"></td>
+                </tr>
+                <tr>
+                    <td>Divertisment:</td>
+                    <td><input type="checkbox" name="divertisment"></td>
+                </tr>
+                <tr>
+                    <td>Scaune confort:</td>
+                    <td><input type="checkbox" name="scaune_confort"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend><strong>Siguranță</strong></legend>
+            <table border="1" width="100%">
+                <tr>
+                    <td>Parasută:</td>
+                    <td><input type="checkbox" name="parasută"></td>
+                </tr>
+                <tr>
+                    <td>Vestă de salvare:</td>
+                    <td><input type="checkbox" name="vestă_salvare"></td>
+                </tr>
+                <tr>
+                    <td>Extinctor:</td>
+                    <td><input type="checkbox" name="extinctor"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+        <ul type="A">
+            <li>Caracteristici generale
+                <ul type="I">
+                    <li>Model</li>
+                    <li>Producător</li>
+                    <li>An fabricație</li>
+                </ul>
+            </li>
+            <li>Caracteristici tehnice
+                <ul type="1">
+                    <li>Număr motoare</li>
+                    <li>Tip combustibil</li>
+                    <li>Autonomie zbor</li>
+                </ul>
+            </li>
+            <li>Dotări
+                <ul type="a">
+                    <li>Wi-Fi</li>
+                    <li>Divertisment</li>
+                    <li>Scaune confort</li>
+                </ul>
+            </li>
+            <li>Siguranță
+                <ul type="i">
+                    <li>Parasută</li>
+                    <li>Vestă de salvare</li>
+                    <li>Extinctor</li>
+                </ul>
+            </li>
+        </ul>
+        <br>
+        <input type="submit" value="Trimite">
+    </form>
+    
+</body>
+</html>
