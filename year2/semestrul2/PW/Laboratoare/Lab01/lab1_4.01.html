@@ -1,27 +1,27 @@
-<!DOCTYPE html>
-<html lang="ro">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formular de completare pentru avioane</title>
 </head>
 
-<body style="background-color: #f0f0f0;">
-    <div style="text-align: center;">
+<body bgcolor="#f0f0f0">
+    <center>
         <h1>
             <b>
                 Formular de completare pentru avioane
-                <img src="/Users/plaiurares/cs-ubb/year2/semestrul2/PW/Laboratoare/A4D9C572-983A-4E33-B2E8-1F91D53162D6_4_5005_c.jpeg" alt="avion" width="100" height="100">
+                <img src ="/Users/plaiurares/cs-ubb/year2/semestrul2/PW/Laboratoare/Lab01/A4D9C572-983A-4E33-B2E8-1F91D53162D6_4_5005_c.jpeg" alt="avion " width="100" height="100">
             </b>
         </h1>
-    </div>
+    </center>
 
     <form action="/submit" method="post">
         <fieldset>
             <legend><strong>Detalii Avion</strong></legend>
-            <table style="border: 1px solid; width: 100%;">
+            <table border="1" width="100%">
                 <tr>
-                    <td colspan="2" style="text-align: center; background-color: #d3d3d3;"><b>Detalii Avion</b></td>
+                    <td colspan="2" align="center" bgcolor="#d3d3d3"><b>Detalii Avion</b></td>
                 </tr>
                 <tr>
                     <td>Model:</td>
@@ -55,7 +55,7 @@
 
         <fieldset>
             <legend><strong>Caracteristici Tehnice</strong></legend>
-            <table style="border: 1px solid; width: 100%;">
+            <table border="1" width="100%">
                 <tr>
                     <td>Număr motoare:</td>
                     <td><input type="text" name="numar_motoare" size="2" maxlength="2"></td>
@@ -83,7 +83,7 @@
 
         <fieldset>
             <legend><strong>Dotări</strong></legend>
-            <table style="border: 1px solid; width: 100%;">
+            <table border="1" width="100%">
                 <tr>
                     <td>Wi-Fi:</td>
                     <td><input type="checkbox" name="wifi"></td>
@@ -101,7 +101,7 @@
 
         <fieldset>
             <legend><strong>Siguranță</strong></legend>
-            <table style="border: 1px solid; width: 100%;">
+            <table border="1" width="100%">
                 <tr>
                     <td>Parasută:</td>
                     <td><input type="checkbox" name="parasută"></td>
@@ -118,30 +118,30 @@
         </fieldset>
 
         <br>
-        <ul>
+        <ul type="CIRCLE">
             <li>Caracteristici generale
-                <ul>
+                <ul type="DISC">
                     <li>Model</li>
                     <li>Producător</li>
                     <li>An fabricație</li>
                 </ul>
             </li>
             <li>Caracteristici tehnice
-                <ul>
+                <ul type="DISC">
                     <li>Număr motoare</li>
                     <li>Tip combustibil</li>
                     <li>Autonomie zbor</li>
                 </ul>
             </li>
             <li>Dotări
-                <ul>
+                <ul type="DISC">
                     <li>Wi-Fi</li>
                     <li>Divertisment</li>
                     <li>Scaune confort</li>
                 </ul>
             </li>
             <li>Siguranță
-                <ul>
+                <ul type="DISC">
                     <li>Parasută</li>
                     <li>Vestă de salvare</li>
                     <li>Extinctor</li>
@@ -151,6 +151,8 @@
         <br>
         <input type="submit" value="Trimite">
     </form>
-    
+    <center>
+        <a href="https://www.wikipedia.org/" target="_blank">Visit Wikipedia</a>
+    </center>
 </body>
 </html>
