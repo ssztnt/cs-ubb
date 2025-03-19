@@ -7,13 +7,13 @@
 }
 
 #Stanga{
-	width: 200px;
+	width: 100px;
 	margin: auto;
 	float: left;
 }
 
 #Dreapta{
-	width: 200px;
+	width: 300px;
 	margin: auto;
 	float: left;
 }
