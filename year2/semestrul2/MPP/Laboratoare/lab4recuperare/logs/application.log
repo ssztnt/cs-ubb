@@ -1,0 +1,43 @@
+2025-03-18 11:41:13 INFO  Main:10 - Application started
+2025-03-18 11:41:13 ERROR Main:19 - This is a test error message
+2025-03-18 11:41:13 INFO  Main:20 - Application finished
+2025-03-18 11:43:41 INFO  Main:17 - Application started
+2025-03-18 11:43:41 INFO  DBUtils:28 - trying to connect to the database jdbc:sqlite:ateltism.sqlite
+2025-03-18 11:43:41 INFO  DBUtils:29 - user 
+2025-03-18 11:43:41 INFO  DBUtils:30 - password 
+2025-03-18 11:43:41 ERROR DBUtils:45 - java.sql.SQLException: No suitable driver found for jdbc:sqlite:ateltism.sqlite
+2025-03-18 11:44:01 INFO  Main:17 - Application started
+2025-03-18 11:44:01 INFO  DBUtils:28 - trying to connect to the database jdbc:sqlite:ateltism.sqlite
+2025-03-18 11:44:01 INFO  DBUtils:29 - user 
+2025-03-18 11:44:01 INFO  DBUtils:30 - password 
+2025-03-18 11:44:02 INFO  Main:38 - Application finished
+2025-03-18 11:58:01 INFO  Main:17 - Application started
+2025-03-18 11:58:01 INFO  DBUtils:28 - trying to connect to the database jdbc:sqlite:ateltism.sqlite
+2025-03-18 11:58:01 INFO  DBUtils:29 - user 
+2025-03-18 11:58:01 INFO  DBUtils:30 - password 
+2025-03-18 11:58:01 INFO  Main:38 - Application finished
+2025-03-18 15:50:05 INFO  Main:17 - Application started
+2025-03-18 15:50:05 INFO  DBUtils:28 - trying to connect to the database jdbc:sqlite:ateltism.sqlite
+2025-03-18 15:50:05 INFO  DBUtils:29 - user 
+2025-03-18 15:50:05 INFO  DBUtils:30 - password 
+2025-03-18 15:50:06 INFO  Main:38 - Application finished
+2025-03-18 16:11:27 INFO  Main:17 - Application started
+2025-03-18 16:11:27 INFO  DBUtils:28 - trying to connect to the database jdbc:sqlite:ateltism.sqlite
+2025-03-18 16:11:27 INFO  DBUtils:29 - user 
+2025-03-18 16:11:27 INFO  DBUtils:30 - password 
+2025-03-18 16:11:28 INFO  Main:38 - Application finished
+2025-03-18 17:02:57 INFO  Main:17 - Application started
+2025-03-18 17:02:57 INFO  DBUtils:28 - trying to connect to the database jdbc:sqlite:ateltism.sqlite
+2025-03-18 17:02:57 INFO  DBUtils:29 - user 
+2025-03-18 17:02:57 INFO  DBUtils:30 - password 
+2025-03-18 17:02:58 INFO  Main:38 - Application finished
+2025-03-18 17:05:44 INFO  Main:17 - Application started
+2025-03-18 17:05:44 INFO  DBUtils:28 - trying to connect to the database jdbc:sqlite:ateltism.sqlite
+2025-03-18 17:05:44 INFO  DBUtils:29 - user 
+2025-03-18 17:05:44 INFO  DBUtils:30 - password 
+2025-03-18 17:05:44 INFO  Main:38 - Application finished
+2025-03-18 17:08:05 INFO  Main:17 - Application started
+2025-03-18 17:08:05 INFO  DBUtils:28 - trying to connect to the database jdbc:sqlite:ateltism.sqlite
+2025-03-18 17:08:05 INFO  DBUtils:29 - user 
+2025-03-18 17:08:05 INFO  DBUtils:30 - password 
+2025-03-18 17:08:05 INFO  Main:38 - Application finished
