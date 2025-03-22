@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <ContentSQLiteInteropFiles>true</ContentSQLiteInteropFiles>
+        <CopySQLiteInteropFiles>false</CopySQLiteInteropFiles>
+        <CleanSQLiteInteropFiles>false</CleanSQLiteInteropFiles>
+        <CollectSQLiteInteropFiles>false</CollectSQLiteInteropFiles>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="log4net" Version="3.0.4" />
+        <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.0-preview.2.25163.8" />
+        <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+        <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.119" />
+        <PackageReference Include="System.Data.SQLite.x64" Version="1.0.119" />
+        <PackageReference Include="System.Data.SQLite.x86" Version="1.0.119" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="log4net.config">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="logs\info.log">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        
+        
+    </ItemGroup>
+
+</Project>
