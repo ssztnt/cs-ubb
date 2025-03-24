@@ -26,6 +26,7 @@ public static class Program
                 while (reader.Read())
                 {
                     Console.WriteLine(reader.GetString(0));
+                    Console.WriteLine("mergemerge");
                 }
             }
         }

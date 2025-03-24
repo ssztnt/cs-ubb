@@ -41,3 +41,8 @@
 2025-03-18 17:08:05 INFO  DBUtils:29 - user 
 2025-03-18 17:08:05 INFO  DBUtils:30 - password 
 2025-03-18 17:08:05 INFO  Main:38 - Application finished
+2025-03-24 12:11:14 INFO  Main:17 - Application started
+2025-03-24 12:11:14 INFO  DBUtils:28 - trying to connect to the database jdbc:sqlite:ateltism.sqlite
+2025-03-24 12:11:14 INFO  DBUtils:29 - user 
+2025-03-24 12:11:14 INFO  DBUtils:30 - password 
+2025-03-24 12:11:14 INFO  Main:38 - Application finished
