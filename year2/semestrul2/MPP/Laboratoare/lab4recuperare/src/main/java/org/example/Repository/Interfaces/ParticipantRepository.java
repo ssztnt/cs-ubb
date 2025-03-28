@@ -10,4 +10,5 @@ public interface ParticipantRepository {
     List<Participant> findByNameandSurname(String name, String surname);
 
     List<Participant> findByEmail(String email);
+
 }

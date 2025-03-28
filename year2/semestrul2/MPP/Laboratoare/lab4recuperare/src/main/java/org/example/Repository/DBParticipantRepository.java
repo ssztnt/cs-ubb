@@ -86,11 +86,31 @@ public class DBParticipantRepository implements ParticipantRepository {
     }
 
     private Participant getParticipantFromResultSet(ResultSet resultSet) throws SQLException {
-        String id = resultSet.getString("id_participant");
         String nume = resultSet.getString("nume");
         String prenume = resultSet.getString("prenume");
         String varsta = resultSet.getString("varsta");
         String email = resultSet.getString("email");
-        return new Participant(id, nume, prenume, varsta, email);
+        return new Participant(nume, prenume, varsta, email);
+    }
+
+    public Participant saveParticipant(Participant participant) {
+        logger.traceEntry();
+        Connection con = dbUtils.getConnection();
+        if (con == null) {
+            logger.error("Database connection is null");
+            return null;
+        }
+        try (PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO Participant (nume, prenume, varsta, email) VALUES (?, ?, ?, ?)")) {
+            preparedStatement.setString(1, participant.getNume());
+            preparedStatement.setString(2, participant.getPrenume());
+            preparedStatement.setString(3, participant.getVarsta());
+            preparedStatement.setString(4, participant.getEmail());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            logger.error(e);
+            System.out.println("Error saving Participant: " + e);
+        }
+        logger.traceExit(participant);
+        return participant;
     }
 }

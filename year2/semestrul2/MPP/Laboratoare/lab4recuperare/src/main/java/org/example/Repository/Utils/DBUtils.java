@@ -9,60 +9,44 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class DBUtils {
-    private Properties jdbcProps;
-    private static final Logger logger= LogManager.getLogger();
+    private Properties properties;
+    private Connection connection;
+    private static final Logger logger = LogManager.getLogger();
 
-    public DBUtils(Properties properties)
-    {
-        jdbcProps=properties;
+    public DBUtils(Properties properties) {
+        this.properties = properties;
+        initializeConnection();
     }
-    private Connection instance=null;
-    private Connection getNewConnection()
-    {
 
+    private void initializeConnection() {
         logger.traceEntry();
+        try {
+            String url = properties.getProperty("jdbc.url");
+            String user = properties.getProperty("jdbc.user");
+            String pass = properties.getProperty("jdbc.password");
+            logger.info("Trying to connect to the database {}", url);
 
-        String url=jdbcProps.getProperty("jdbc.url");
-        String user=jdbcProps.getProperty("jdbc.user");
-        String pass=jdbcProps.getProperty("jdbc.password");
-        logger.info("trying to connect to the database {}",url);
-        logger.info("user {}",user);
-        logger.info("password {}",pass);
-        Connection connection=null;
-        try
-        {
-            if (user!=null & pass!=null)
-            {
-                connection= DriverManager.getConnection(url,user,pass);
+            if (url != null) {
+                if (user != null && !user.isEmpty() && pass != null && !pass.isEmpty()) {
+                    logger.info("User {}", user);
+                    logger.info("Password {}", pass);
+                    connection = DriverManager.getConnection(url, user, pass);
+                } else {
+                    connection = DriverManager.getConnection(url);
+                }
+            } else {
+                throw new SQLException("Database URL not specified");
             }
-            else
-            {
-                connection=DriverManager.getConnection(url);
-            }
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             logger.error(e);
-            System.out.println("Error: "+e);
+            System.out.println("Error: " + e);
         }
-        System.out.println("Connection "+connection);
+        logger.traceExit();
+    }
+
+    public Connection getConnection() {
+        logger.traceEntry();
+        logger.traceExit(connection);
         return connection;
-    }
-    public Connection getConnection()
-    {
-        logger.traceEntry();
-        try
-        {
-            if (instance==null || instance.isClosed())
-                instance=getNewConnection();
-        }
-        catch (SQLException e)
-        {
-            logger.error(e);
-            System.out.println("Error getting connection "+e);
-
-        }
-        logger.traceExit(instance);
-        return instance;
     }
 }

@@ -9,8 +9,7 @@ public class Participant {
     private String varsta;
     private String email;
 
-    public Participant(String id_participant, String nume, String prenume, String varsta, String email) {
-        this.id_participant = id_participant;
+    public Participant(String nume, String prenume, String varsta, String email) {
         this.nume = nume;
         this.prenume = prenume;
         this.varsta = varsta;
