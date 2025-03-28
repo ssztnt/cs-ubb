@@ -46,3 +46,96 @@
 2025-03-24 12:11:14 INFO  DBUtils:29 - user 
 2025-03-24 12:11:14 INFO  DBUtils:30 - password 
 2025-03-24 12:11:14 INFO  Main:38 - Application finished
+2025-03-24 17:17:21 INFO  DBUtils:28 - trying to connect to the database null
+2025-03-24 17:17:21 INFO  DBUtils:29 - user null
+2025-03-24 17:17:21 INFO  DBUtils:30 - password null
+2025-03-24 17:17:21 ERROR DBUtils:45 - java.sql.SQLException: The url cannot be null
+2025-03-24 17:19:28 INFO  DBUtils:28 - trying to connect to the database null
+2025-03-24 17:19:28 INFO  DBUtils:29 - user null
+2025-03-24 17:19:28 INFO  DBUtils:30 - password null
+2025-03-24 17:19:28 ERROR DBUtils:45 - java.sql.SQLException: The url cannot be null
+2025-03-24 17:19:28 ERROR DBParticipantRepository:101 - Database connection is null
+2025-03-24 17:20:30 INFO  DBUtils:28 - trying to connect to the database null
+2025-03-24 17:20:30 INFO  DBUtils:29 - user null
+2025-03-24 17:20:30 INFO  DBUtils:30 - password null
+2025-03-24 17:20:30 ERROR DBUtils:45 - java.sql.SQLException: The url cannot be null
+2025-03-24 17:20:30 ERROR DBParticipantRepository:101 - Database connection is null
+2025-03-24 17:20:55 INFO  DBUtils:28 - trying to connect to the database null
+2025-03-24 17:20:55 INFO  DBUtils:29 - user null
+2025-03-24 17:20:55 INFO  DBUtils:30 - password null
+2025-03-24 17:20:55 ERROR DBUtils:45 - java.sql.SQLException: The url cannot be null
+2025-03-24 17:20:55 ERROR DBParticipantRepository:101 - Database connection is null
+2025-03-24 17:24:43 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 17:24:43 INFO  DBUtils:28 - User null
+2025-03-24 17:24:43 INFO  DBUtils:29 - Password null
+2025-03-24 17:24:43 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 17:30:24 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 17:30:24 INFO  DBUtils:28 - User null
+2025-03-24 17:30:24 INFO  DBUtils:29 - Password null
+2025-03-24 17:30:24 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 17:31:03 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 17:31:03 INFO  DBUtils:28 - User null
+2025-03-24 17:31:03 INFO  DBUtils:29 - Password null
+2025-03-24 17:31:03 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 17:31:08 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 17:47:27 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 17:47:27 INFO  DBUtils:28 - User null
+2025-03-24 17:47:27 INFO  DBUtils:29 - Password null
+2025-03-24 17:47:27 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 17:47:39 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 17:48:36 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 17:48:36 INFO  DBUtils:28 - User null
+2025-03-24 17:48:36 INFO  DBUtils:29 - Password null
+2025-03-24 17:48:36 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 17:48:41 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 17:52:25 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 17:52:25 INFO  DBUtils:28 - User null
+2025-03-24 17:52:25 INFO  DBUtils:29 - Password null
+2025-03-24 17:52:25 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 17:52:31 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 17:55:16 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 17:55:16 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 17:55:20 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 17:56:52 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 17:56:52 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 17:56:56 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 17:57:37 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 17:57:37 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 17:57:41 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 18:01:35 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:01:35 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:01:39 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 18:07:35 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:07:35 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:07:35 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:07:35 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:07:35 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:07:35 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:07:38 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 18:08:07 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:08:07 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:08:07 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:08:07 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:08:07 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:08:07 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:08:11 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 18:12:19 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:12:19 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:12:19 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:12:19 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:12:19 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:12:19 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:12:23 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 18:12:53 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:12:53 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:12:53 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:12:53 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:12:53 INFO  DBUtils:27 - Trying to connect to the database null
+2025-03-24 18:12:53 ERROR DBUtils:41 - java.sql.SQLException: Database URL not specified
+2025-03-24 18:12:58 ERROR DBParticipantRepository:100 - Database connection is null
+2025-03-24 18:13:22 INFO  DBUtils:27 - Trying to connect to the database jdbc:sqlite:/Users/plaiurares/cs-ubb/year2/semestrul2/MPP/Laboratoare/lab4recuperare/ateltism.sqlite
+2025-03-24 18:13:23 INFO  DBUtils:27 - Trying to connect to the database jdbc:sqlite:/Users/plaiurares/cs-ubb/year2/semestrul2/MPP/Laboratoare/lab4recuperare/ateltism.sqlite
+2025-03-24 18:13:23 INFO  DBUtils:27 - Trying to connect to the database jdbc:sqlite:/Users/plaiurares/cs-ubb/year2/semestrul2/MPP/Laboratoare/lab4recuperare/ateltism.sqlite
+2025-03-25 16:03:09 INFO  DBUtils:27 - Trying to connect to the database jdbc:sqlite:/Users/plaiurares/cs-ubb/year2/semestrul2/MPP/Laboratoare/lab4recuperare/ateltism.sqlite
+2025-03-25 16:03:09 INFO  DBUtils:27 - Trying to connect to the database jdbc:sqlite:/Users/plaiurares/cs-ubb/year2/semestrul2/MPP/Laboratoare/lab4recuperare/ateltism.sqlite
+2025-03-25 16:03:09 INFO  DBUtils:27 - Trying to connect to the database jdbc:sqlite:/Users/plaiurares/cs-ubb/year2/semestrul2/MPP/Laboratoare/lab4recuperare/ateltism.sqlite
