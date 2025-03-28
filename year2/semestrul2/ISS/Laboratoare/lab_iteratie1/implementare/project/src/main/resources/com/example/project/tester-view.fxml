@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="252.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.TesterController">
+    <children>
+        <ImageView fitHeight="260.0" fitWidth="601.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Tester.png" />
+            </image>
+        </ImageView>
+      <TextField fx:id="tester_name" layoutX="151.0" layoutY="54.0" prefHeight="9.0" prefWidth="114.0" promptText="Your name" />
+      <Button fx:id="add_button" layoutX="525.0" layoutY="87.0" mnemonicParsing="false" onAction="#add_bug" prefHeight="26.0" prefWidth="52.0" text="ADD" />
+      <TextArea fx:id="add_description" layoutX="358.0" layoutY="128.0" prefHeight="121.0" prefWidth="142.0" promptText="Description:" />
+      <TextField fx:id="add_name" layoutX="358.0" layoutY="87.0" prefHeight="26.0" prefWidth="142.0" promptText="Name:" />
+      <TableView fx:id="bugs_list" layoutX="14.0" layoutY="87.0" prefHeight="170.0" prefWidth="336.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="60.199995040893555" text="name" />
+          <TableColumn fx:id="description" prefWidth="104.80000305175781" text="description" />
+            <TableColumn fx:id="status" prefWidth="76.79997253417969" text="status" />
+            <TableColumn fx:id="resolved_by" prefWidth="81.80001831054688" text="resolved_by" />
+        </columns>
+      </TableView>
+      <Button fx:id="exit_button" layoutX="525.0" layoutY="213.0" mnemonicParsing="false" onAction="#handle_exit" text="EXIT" />
+    </children>
+</AnchorPane>
