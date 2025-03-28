@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+
+# Java
+*.class
+build/
+out/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+# SQLite
+*.sqlite
+
+# Misc
+*.tmp
+*.bak
+
