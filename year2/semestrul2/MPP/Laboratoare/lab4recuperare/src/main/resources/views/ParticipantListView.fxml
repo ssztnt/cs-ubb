@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            fx:controller="org.example.Controller.ParticipantListController">
+
+    <TableView fx:id="participantTable" layoutX="10" layoutY="10" prefWidth="500">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="100"/>
+            <TableColumn fx:id="surnameColumn" text="Surname" prefWidth="100"/>
+            <TableColumn fx:id="ageColumn" text="Age" prefWidth="50"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+</AnchorPane>

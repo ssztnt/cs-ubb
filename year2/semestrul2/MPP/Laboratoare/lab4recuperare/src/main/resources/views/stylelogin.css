@@ -1,0 +1,48 @@
+GridPane {
+    -fx-background-color: #F5F7FA;
+    -fx-padding: 20;
+    -fx-hgap: 15;
+    -fx-vgap: 15;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Labels styling */
+Label {
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+}
+
+/* Text fields styling */
+TextField {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D9E6;
+    -fx-border-radius: 5;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0, 0, 1);
+}
+
+TextField:focused {
+    -fx-border-color: #6A82FB;
+    -fx-effect: dropshadow(gaussian, rgba(106,130,251,0.4), 5, 0, 0, 0);
+}
+
+/* Button styling */
+Button {
+    -fx-background-color: linear-gradient(to bottom right, #6A82FB, #5C6BC0);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+Button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #5C6BC0, #3F51B5);
+}
+
+Button:pressed {
+    -fx-background-color: linear-gradient(to bottom right, #3F51B5, #3949AB);
+}

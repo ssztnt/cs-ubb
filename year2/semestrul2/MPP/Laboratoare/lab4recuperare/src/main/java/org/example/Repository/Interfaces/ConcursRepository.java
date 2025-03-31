@@ -8,4 +8,6 @@ public interface ConcursRepository {
     Iterable<Concurs> findbyID(Long id);
 
     Iterable<Concurs> findbyLocation(String location);
+
+    Iterable<Concurs> findAll();
 }

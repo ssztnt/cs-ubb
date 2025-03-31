@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/17.0.12"
+           fx:controller="org.example.Controller.MainController"
+           orientation="HORIZONTAL">
+
+    <items>
+        <!-- Left side: Tabs -->
+        <TabPane fx:id="tabPane" prefWidth="600.0">
+            <tabs>
+                <Tab text="Participants">
+                    <AnchorPane fx:id="participantView" />
+                </Tab>
+                <Tab text="Concursuri">
+                    <AnchorPane fx:id="concursListView" />
+                </Tab>
+            </tabs>
+        </TabPane>
+
+        <!-- Right side: Register form -->
+        <AnchorPane fx:id="registerView" />
+    </items>
+</SplitPane>
+

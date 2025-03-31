@@ -1,15 +1,15 @@
 package org.example.Service;
 
+import org.example.Model.Concurs;
+import org.example.Model.Inscriere;
 import org.example.Model.Participant;
 import org.example.Repository.DBConcursRepository;
 import org.example.Repository.DBInscriereRepository;
 import org.example.Repository.DBParticipantRepository;
 import org.example.Repository.Interfaces.ParticipantRepository;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
-import java.io.FileInputStream;
-import java.io.IOException;
 
 public class AtletismServiceImplementation implements AtletismService {
     private DBParticipantRepository participantRepository;
@@ -42,4 +42,34 @@ public class AtletismServiceImplementation implements AtletismService {
     public void saveParticipant(Participant participant) {
         participantRepository.saveParticipant(participant);
     }
+
+    @Override
+    public void saveInscriere(Inscriere inscriere) {
+        inscriereRepository.save(inscriere);
+    }
+
+    @Override
+    public List<Concurs> getConcursList() {
+        List<Concurs> list = new ArrayList<>();
+        concursRepository.findAll().forEach(list::add);
+        return list;
+    }
+
+    @Override
+    public List<Inscriere> getAllInscrieri() {
+        List<Inscriere> list = new ArrayList<>();
+        inscriereRepository.findAll().forEach(list::add);
+        return list;
+    }
+
+
+    @Override
+    public List<Concurs> getConcursByName(String name) {
+        List<Concurs> list = new ArrayList<>();
+        concursRepository.findByName(name).forEach(list::add);
+        return list;
+    }
+
+
+
 }

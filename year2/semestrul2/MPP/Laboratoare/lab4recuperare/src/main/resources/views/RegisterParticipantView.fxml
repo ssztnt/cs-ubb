@@ -4,7 +4,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.example.Controller.RegisterController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1"
+          xmlns="http://javafx.com/javafx/17.0.12"
+          fx:controller="org.example.Controller.RegisterController"
+          stylesheets="@/views/stylelogin.css">
+
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
@@ -23,7 +27,11 @@
     <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
     <Button onAction="#handleRegisterButtonAction" prefHeight="26.0" prefWidth="86.0" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-   <columnConstraints>
+    <Button text="Manage Inscrieri"
+            layoutX="10" layoutY="250"
+            onAction="#handleOpenInscriereWindow"/>
+
+    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>

@@ -86,10 +86,27 @@ public class DBConcursRepository implements ConcursRepository {
     }
 
     private Concurs getConcursFromResultSet(ResultSet resultSet) throws SQLException {
-        String id = String.valueOf(resultSet.getLong("id"));
-        String name = resultSet.getString("name");
-        String date = resultSet.getString("date");
-        String location = resultSet.getString("location");
+        String id = resultSet.getString("id_concurs");   // ✅ FIXED
+        String name = resultSet.getString("nume");
+        String date = resultSet.getString("data");
+        String location = resultSet.getString("locatie");
         return new Concurs(id, name, date , location);
     }
+
+
+    @Override
+    public Iterable<Concurs> findAll() {
+        List<Concurs> list = new ArrayList<>();
+        Connection con = dbUtils.getConnection();
+        try (PreparedStatement ps = con.prepareStatement("SELECT * FROM Concurs");
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                list.add(getConcursFromResultSet(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 }

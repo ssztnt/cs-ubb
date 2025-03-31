@@ -1,7 +1,11 @@
 package org.example.Controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import org.example.Model.Participant;
 import org.example.Service.AtletismService;
 import org.example.Service.AtletismServiceImplementation;
@@ -36,6 +40,24 @@ public class RegisterController {
         DBConcursRepository concursRepository = new DBConcursRepository(properties);
         this.atletismService = new AtletismServiceImplementation(participantRepository, inscriereRepository, concursRepository);
     }
+    @FXML
+    private void handleOpenInscriereWindow() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/InscriereWindow.fxml"));
+            Parent root = loader.load();
+
+            InscriereController controller = loader.getController();
+            controller.setService(atletismService); // Pass the service
+
+            Stage stage = new Stage();
+            stage.setTitle("Inscriere Manager");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     private void handleRegisterButtonAction() {
@@ -47,4 +69,10 @@ public class RegisterController {
         Participant participant = new Participant(name, surname, age, email);
         atletismService.saveParticipant(participant);
     }
+
+    public void setService(AtletismService service) {
+    }
+
+
+
 }

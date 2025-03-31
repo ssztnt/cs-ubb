@@ -10,9 +10,10 @@ public class FXMenu extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/register.fxml"));
-        primaryStage.setTitle("Register Participant");
-        primaryStage.setScene(new Scene(root, 400, 300));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/MainView.fxml"));
+        Parent root = loader.load();
+        primaryStage.setTitle("Athletics Registration System");
+        primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
 

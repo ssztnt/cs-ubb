@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.Controller.InscriereController"
+      alignment="CENTER"
+>
+
+    <TableView fx:id="inscriereTable" prefWidth="600" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="idColumn" text="Inscriere ID"/>
+            <TableColumn fx:id="participantColumn" text="Participant ID"/>
+            <TableColumn fx:id="concursColumn" text="Concurs Name"/>
+            <TableColumn fx:id="timestampColumn" text="Timestamp"/>
+        </columns>
+    </TableView>
+
+
+    <HBox spacing="10">
+        <TextField fx:id="participantEmailField" promptText="Participant Email"/>
+        <TextField fx:id="concursNameField" promptText="Concurs Name"/>
+        <Button text="Add Inscriere" onAction="#handleAddInscriere"/>
+    </HBox>
+
+</VBox>

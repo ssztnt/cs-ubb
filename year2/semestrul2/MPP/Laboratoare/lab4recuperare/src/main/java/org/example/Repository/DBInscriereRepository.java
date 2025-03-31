@@ -90,15 +90,32 @@ public class DBInscriereRepository implements InscriereRepository {
         return inscriereList;
     }
 
-    private Inscriere getInscriereFromResultSet(ResultSet resultSet) throws SQLException {
-        String id = String.valueOf(resultSet.getLong("id"));
-        String idParticipant = resultSet.getString("id_participant");
-        String idConcurs = resultSet.getString("id_concurs");
-        return new Inscriere(id, idParticipant, idConcurs);
+    private Inscriere getInscriereFromResultSet(ResultSet rs) throws SQLException {
+        String id = rs.getString("id_inscriere");
+        String participantId = rs.getString("id_participant");
+        String concursName = rs.getString("concurs_name");
+        String timestamp = rs.getString("timestamp");
+        return new Inscriere(id, participantId, concursName, timestamp);
     }
+
+
 
     @Override
     public Optional<Inscriere> save(Inscriere entity) {
+        Connection con = dbUtils.getConnection();
+        try (PreparedStatement ps = con.prepareStatement("INSERT INTO Inscriere VALUES (?, ?, ?, ?)")) {
+            ps.setString(1, entity.getId_inscriere());
+            ps.setString(2, entity.getId_participant());
+            ps.setString(3, entity.getConcurs_name());
+            ps.setString(4, entity.getTimestamp());
+
+            ps.executeUpdate();
+            System.out.println("✔ Inscriere saved to DB");
+            return Optional.of(entity);
+        } catch (SQLException e) {
+            System.err.println("❌ Failed to insert inscriere: " + e.getMessage());
+            e.printStackTrace();
+        }
         return Optional.empty();
     }
 
