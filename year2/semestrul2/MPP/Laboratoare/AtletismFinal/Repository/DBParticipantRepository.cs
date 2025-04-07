@@ -12,6 +12,7 @@ namespace AtletismFinal.Repository
     public class DBParticipantRepository : ParticipantRepository
     {
         private readonly string _connectionString;
+        public string ConnectionString => _connectionString;
         private static readonly ILog logger = LogManager.GetLogger(typeof(DBParticipantRepository));
 
         public DBParticipantRepository(string connectionString)
@@ -100,5 +101,25 @@ namespace AtletismFinal.Repository
             var email = reader["email"].ToString();
             return new Participant(id, nume, prenume, varsta, email);
         }
+        
+        public void AddParticipant(Participant participant)
+        {
+            using (var con = new SQLiteConnection(_connectionString))
+            {
+                con.Open();
+                using (var cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = @"INSERT INTO Participant (id_participant, nume, prenume, varsta, email)
+                                VALUES (@id, @nume, @prenume, @varsta, @email)";
+                    cmd.Parameters.AddWithValue("@id", participant.IdParticipant);
+                    cmd.Parameters.AddWithValue("@nume", participant.Nume);
+                    cmd.Parameters.AddWithValue("@prenume", participant.Prenume);
+                    cmd.Parameters.AddWithValue("@varsta", participant.Varsta);
+                    cmd.Parameters.AddWithValue("@email", participant.Email);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

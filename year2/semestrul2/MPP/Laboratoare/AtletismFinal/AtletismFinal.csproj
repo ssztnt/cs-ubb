@@ -12,12 +12,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.2.6" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.6" />
+        <PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.1.5" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.2.6" />
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.6" />
         <PackageReference Include="log4net" Version="3.0.4" />
         <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.0-preview.2.25163.8" />
         <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
         <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.119" />
         <PackageReference Include="System.Data.SQLite.x64" Version="1.0.119" />
         <PackageReference Include="System.Data.SQLite.x86" Version="1.0.119" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.6" />
     </ItemGroup>
 
     <ItemGroup>
@@ -27,8 +33,10 @@
         <None Update="logs\info.log">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        
-        
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.6" />
+
+
+
     </ItemGroup>
 
 </Project>

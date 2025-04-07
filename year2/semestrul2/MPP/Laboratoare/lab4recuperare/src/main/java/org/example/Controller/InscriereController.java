@@ -26,17 +26,19 @@ public class InscriereController implements Initializable {
 
     @FXML private TextField participantEmailField;
     @FXML private TextField concursNameField;
+    @FXML private TextField filterConcursField;
 
+    private List<Inscriere> allInscrieri;
     private AtletismService service;
 
     public void setService(AtletismService service) {
         this.service = service;
-        loadTable();
+        this.allInscrieri = service.getAllInscrieri();  // Load once
+        loadTable(allInscrieri);
     }
 
-    private void loadTable() {
-        List<Inscriere> inscrieri = service.getAllInscrieri();
-        inscriereTable.getItems().setAll(inscrieri);
+    private void loadTable(List<Inscriere> list) {
+        inscriereTable.getItems().setAll(list);
     }
 
     @Override
@@ -73,18 +75,39 @@ public class InscriereController implements Initializable {
         Inscriere inscriere = new Inscriere(
                 UUID.randomUUID().toString(),
                 p.getId_participant(),
-                c.getNume(), // storing concurs name
+                c.getNume(),
                 timestamp
         );
 
         service.saveInscriere(inscriere);
-        loadTable();
+
+        // Refresh full list + reset filter field
+        this.allInscrieri = service.getAllInscrieri();
+        filterConcursField.clear();
+        loadTable(allInscrieri);
+    }
+
+    @FXML
+    private void handleFilterByConcurs() {
+        String filter = filterConcursField.getText().trim().toLowerCase();
+
+        if (filter.isEmpty()) {
+            loadTable(allInscrieri);
+            return;
+        }
+
+        List<Inscriere> filtered = allInscrieri.stream()
+                .filter(i -> i.getConcurs_name().toLowerCase().contains(filter))
+                .toList();
+
+        loadTable(filtered);
     }
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION, message);
         alert.setTitle(title);
         alert.setHeaderText(null);
+        alert.setContentText(message);
         alert.showAndWait();
     }
 }

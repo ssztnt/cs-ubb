@@ -23,6 +23,7 @@ public class MainController implements Initializable {
     private ParticipantListController participantListController;
     private ConcursListController concursListController;
     private RegisterController registerController;
+    private AtletismService service;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -61,5 +62,9 @@ public class MainController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setService(AtletismService service) {
+        this.service = service;
     }
 }

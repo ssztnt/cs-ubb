@@ -105,26 +105,37 @@ public partial class MainWindow : Window
     private async void OnDeleteClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         if (selectedRegistration is null)
-            return;
-
-        var connString = "Host=localhost;Username=postgres;Password=;Database=plaiurares";
-
-        using var conn = new NpgsqlConnection(connString);
-        await conn.OpenAsync();
-
-        var cmd = new NpgsqlCommand("DELETE FROM Registrations WHERE id = @id", conn);
-        cmd.Parameters.AddWithValue("id", selectedRegistration.Id);
-        await cmd.ExecuteNonQueryAsync();
-
-        // Reîncarcă lista după ștergere
-        if (EventsListBox.SelectedItem is Event selectedEvent)
         {
-            var registrations = await GetRegistrationsForEvent(selectedEvent.Id);
-            RegistrationsListBox.ItemsSource = registrations;
+            await MessageBox("No registration selected.");
+            return;
         }
 
-        selectedRegistration = null;
-        RegistrationDateTextBox.Text = "";
+        try
+        {
+            var connString = "Host=localhost;Username=postgres;Password=;Database=plaiurares";
+
+            using var conn = new NpgsqlConnection(connString);
+            await conn.OpenAsync();
+
+            var cmd = new NpgsqlCommand("DELETE FROM Registrations WHERE id = @id", conn);
+            cmd.Parameters.AddWithValue("id", selectedRegistration.Id);
+            await cmd.ExecuteNonQueryAsync();
+
+            // Reîncarcă lista după ștergere
+            if (EventsListBox.SelectedItem is Event selectedEvent)
+            {
+                var registrations = await GetRegistrationsForEvent(selectedEvent.Id);
+                RegistrationsListBox.ItemsSource = registrations;
+            }
+
+            selectedRegistration = null;
+            RegistrationDateTextBox.Text = "";
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error deleting registration: {ex.Message}");
+            await MessageBox("An error occurred while deleting the registration.");
+        }
     }
     
     private async void OnUpdateClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

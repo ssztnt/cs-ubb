@@ -10,6 +10,12 @@
       alignment="CENTER"
 >
 
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Filtrează după concurs:" />
+        <TextField fx:id="filterConcursField" promptText="Nume concurs"/>
+        <Button text="Filtrează" onAction="#handleFilterByConcurs"/>
+    </HBox>
+
     <TableView fx:id="inscriereTable" prefWidth="600" prefHeight="300">
         <columns>
             <TableColumn fx:id="idColumn" text="Inscriere ID"/>
