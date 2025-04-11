@@ -26,3 +26,9 @@ logs/
 *.tmp
 *.bak
 
+*.iml
+.idea/
+.DS_Store
+*.log
+bin/
+obj/
