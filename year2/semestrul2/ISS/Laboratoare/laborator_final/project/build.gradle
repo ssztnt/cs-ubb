@@ -30,8 +30,8 @@ application {
 }
 
 javafx {
-    version = "20"
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    version = '17.0.6'
+    modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
@@ -39,10 +39,6 @@ dependencies {
     implementation('com.dlsc.formsfx:formsfx-core:11.6.0') {
         exclude(group: 'org.openjfx')
     }
-    implementation 'org.openjfx:javafx-controls:20'
-    implementation 'org.openjfx:javafx-fxml:20'
-    implementation 'org.postgresql:postgresql:42.7.3'
-
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

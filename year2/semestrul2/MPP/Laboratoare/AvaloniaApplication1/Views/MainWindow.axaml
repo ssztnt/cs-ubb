@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:AvaloniaApplication1.Views"
+        xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+        x:Class="AvaloniaApplication1.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Atletism Manager" Width="1000" Height="600">
+
+    <Grid ColumnDefinitions="3*,2*">
+        <!-- Left Side: Tabs -->
+        <TabControl Margin="10">
+            <TabItem Header="Participants">
+                <views:ParticipantListView />
+            </TabItem>
+            <TabItem Header="Concursuri">
+                <views:ConcursListView />
+            </TabItem>
+        </TabControl>
+
+        <!-- Right Side: Inscriere form -->
+        <Border Grid.Column="1" Padding="20">
+            <StackPanel Spacing="10">
+                <Button Content="Manage Inscrieri"
+                        Width="200"
+                        HorizontalAlignment="Left"
+                        Command="{Binding OpenInscrieriCommand}" />
+
+                <Button Content="View Inscrieri"
+                        Width="200"
+                        HorizontalAlignment="Left"
+                        Command="{Binding ViewInscrieriCommand}" />
+
+                <views:InscriereRegisterView DataContext="{Binding InscriereRegisterVM}" />
+            </StackPanel>
+
+        </Border>
+    </Grid>
+</Window>

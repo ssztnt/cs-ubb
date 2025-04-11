@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             x:Class="AvaloniaApplication1.Views.InscriereRegisterView"
+             x:DataType="vm:InscriereRegisterViewModel">
+
+    <StackPanel Spacing="10">
+        <TextBlock Text="Register Inscriere" FontSize="18" Margin="0,0,0,10" />
+
+        <!-- Participant ComboBox (show ID) -->
+        <ComboBox ItemsSource="{Binding Participants}"
+                  SelectedItem="{Binding SelectedParticipant}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding IdParticipant}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <!-- Concurs ComboBox (show Name) -->
+        <ComboBox ItemsSource="{Binding Concursuri}"
+                  SelectedItem="{Binding SelectedConcurs}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Nume}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <!-- Register button -->
+        <Button Content="Register Inscriere"
+                Command="{Binding RegisterCommand}"
+                Width="250" />
+
+        <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" />
+        <TextBlock Text="{Binding SuccessMessage}" Foreground="Green" />
+    </StackPanel>
+</UserControl>

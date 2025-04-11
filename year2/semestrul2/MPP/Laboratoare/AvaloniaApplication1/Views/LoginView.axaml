@@ -1,0 +1,20 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+    x:Class="AvaloniaApplication1.Views.LoginView"
+    x:DataType="vm:LoginViewModel">
+
+    <Border Background="{DynamicResource ThemeBackgroundBrush}" Padding="30">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+            <TextBlock Text="Login" FontSize="24" HorizontalAlignment="Center" />
+
+            <TextBox Watermark="Email" Width="250" Text="{Binding Email}" />
+            <TextBox Watermark="Password" Width="250" Text="{Binding Password}" PasswordChar="•" />
+
+            <Button Content="Login" Width="250" Command="{Binding LoginCommand}" />
+
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" FontSize="12" />
+        </StackPanel>
+    </Border>
+</UserControl>

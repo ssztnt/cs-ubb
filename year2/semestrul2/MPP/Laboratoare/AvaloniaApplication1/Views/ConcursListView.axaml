@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:avaloniaDataGrid="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+             xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             x:Class="AvaloniaApplication1.Views.ConcursListView"
+             x:DataType="vm:ConcursListViewModel">
+
+    <avaloniaDataGrid:DataGrid ItemsSource="{Binding Concursuri}"
+                               AutoGenerateColumns="False"
+                               IsReadOnly="True">
+        <avaloniaDataGrid:DataGrid.Columns>
+            <avaloniaDataGrid:DataGridTextColumn Header="ID" Binding="{Binding IdConcurs}" />
+            <avaloniaDataGrid:DataGridTextColumn Header="Name" Binding="{Binding Nume}" />
+            <avaloniaDataGrid:DataGridTextColumn Header="Date" Binding="{Binding Data, StringFormat='dd/MM/yyyy'}" />
+            <avaloniaDataGrid:DataGridTextColumn Header="Location" Binding="{Binding Locatie}" />
+        </avaloniaDataGrid:DataGrid.Columns>
+    </avaloniaDataGrid:DataGrid>
+</UserControl>

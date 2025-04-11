@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             x:Class="AvaloniaApplication1.Views.RegisterView"
+             x:DataType="vm:RegisterViewModel">
+    <Border Padding="30" Background="{DynamicResource ThemeBackgroundBrush}">
+        <StackPanel Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Register Participant" FontSize="20" HorizontalAlignment="Center"/>
+
+            <TextBox Watermark="Nume" Width="250" Text="{Binding Nume}" />
+            <TextBox Watermark="Prenume" Width="250" Text="{Binding Prenume}" />
+            <TextBox Watermark="Vârstă" Width="250" Text="{Binding Varsta}" />
+            <TextBox Watermark="Email" Width="250" Text="{Binding Email}" />
+
+            <Button Content="Register" Width="250" Command="{Binding RegisterCommand}" />
+
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" />
+            <TextBlock Text="{Binding SuccessMessage}" Foreground="Green" />
+        </StackPanel>
+    </Border>
+</UserControl>

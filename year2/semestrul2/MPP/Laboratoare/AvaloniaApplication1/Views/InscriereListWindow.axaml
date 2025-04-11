@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+        xmlns:data="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+        x:Class="AvaloniaApplication1.Views.InscriereListWindow"
+        Width="600" Height="400"
+        Title="Lista Inscrieri"
+        x:DataType="vm:InscriereListViewModel">
+
+    <StackPanel Margin="10" Spacing="10">
+        
+        <!-- Sort Button -->
+        <Button Content="Sortare după Concurs"
+                Command="{Binding SortByConcursCommand}"
+                Width="200"
+                HorizontalAlignment="Left" />
+
+        <!-- DataGrid to show inscrieri -->
+        <data:DataGrid ItemsSource="{Binding Inscrieri}"
+                       AutoGenerateColumns="False"
+                       IsReadOnly="True"
+                       Height="300">
+            <data:DataGrid.Columns>
+                <data:DataGridTextColumn Header="ID" Binding="{Binding IdInscriere}" />
+                <data:DataGridTextColumn Header="Participant ID" Binding="{Binding IdParticipant}" />
+                <data:DataGridTextColumn Header="Concurs" Binding="{Binding ConcursName}" />
+                <data:DataGridTextColumn Header="Timestamp" Binding="{Binding Timestamp}" />
+            </data:DataGrid.Columns>
+        </data:DataGrid>
+    </StackPanel>
+</Window>

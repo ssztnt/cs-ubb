@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:data="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+             xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             x:Class="AvaloniaApplication1.Views.ParticipantListView"
+             x:DataType="vm:ParticipantListViewModel">
+
+    <data:DataGrid ItemsSource="{Binding Participants}"
+                   AutoGenerateColumns="False"
+                   IsReadOnly="True">
+        <data:DataGrid.Columns>
+            <data:DataGridTextColumn Header="ID" Binding="{Binding IdParticipant}" />
+            <data:DataGridTextColumn Header="Name" Binding="{Binding Nume}" />
+            <data:DataGridTextColumn Header="Surname" Binding="{Binding Prenume}" />
+            <data:DataGridTextColumn Header="Age" Binding="{Binding Varsta}" />
+            <data:DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+        </data:DataGrid.Columns>
+    </data:DataGrid>
+</UserControl>

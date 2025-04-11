@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="339.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.controller.ProgrammerController">
+    <children>
+    <ImageView fitHeight="400.0" fitWidth="601.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@Programmer.png" />
+        </image>
+    </ImageView>
+      <TableView fx:id="bugs_list" layoutX="2.0" layoutY="91.0" prefHeight="248.0" prefWidth="367.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="75.0" text="name" />
+          <TableColumn fx:id="description" prefWidth="111.20001983642578" text="description" />
+            <TableColumn fx:id="status" prefWidth="104.79998779296875" text="status" />
+            <TableColumn fx:id="resolved_by" prefWidth="76.60003662109375" text="resolved_by" />
+        </columns>
+      </TableView>
+      <Button layoutX="395.0" layoutY="223.0" mnemonicParsing="false" onAction="#resolve_bug" prefHeight="26.0" prefWidth="101.0" text="Resolve bug" />
+      <TextField fx:id="programmer_name" layoutX="124.0" layoutY="53.0" prefHeight="26.0" prefWidth="169.0" promptText="Your name" />
+      <Button fx:id="exit_button" layoutX="535.0" layoutY="300.0" mnemonicParsing="false" onAction="#handle_exit" prefHeight="26.0" prefWidth="51.0" text="Exit" />
+    </children>
+</AnchorPane>
