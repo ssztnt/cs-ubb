@@ -21,4 +21,12 @@
         <PackageReference Include="Dapper" Version="2.1.66" />
         <PackageReference Include="Npgsql" Version="9.0.3" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Debug\net9.0\form_config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="bin\Debug\net9.0\form_config_organizers.json" />
+      <Content Include="bin\Debug\net9.0\form_config_participants.json" />
+    </ItemGroup>
 </Project>

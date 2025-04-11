@@ -1,45 +1,164 @@
 using Avalonia.Controls;
+using Avalonia;
 using laborator_01.Models;
 using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
+using System.IO;
+using System.Text.Json;
 using System.Threading.Tasks;
+using Avalonia.Interactivity;
 
 namespace laborator_01;
 
 public partial class MainWindow : Window
-{   
+{
+    private FormConfig? _config;
     private Registration? selectedRegistration = null;
 
     public MainWindow()
     {
+        Console.WriteLine("MainWindow constructor reached");
         InitializeComponent();
-        LoadEvents();
     }
 
-    private async void LoadEvents()
+    private async Task LoadConfig(string fileName)
     {
-        var events = await GetEventsFromDatabase();
+        try
+        {
+            string path = Path.Combine(AppContext.BaseDirectory, fileName);
+            string json = File.ReadAllText(path);
+            Console.WriteLine("Raw JSON:");
+            Console.WriteLine(json);
 
-        Debug.WriteLine($"Loaded {events.Count} events");
-        EventsListBox.ItemsSource = events;
+            _config = JsonSerializer.Deserialize<FormConfig>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            if (_config == null || _config.Master == null || _config.Detail == null)
+            {
+                Console.WriteLine("Invalid config.");
+                return;
+            }
+
+            this.Title = _config.Title;
+            LoadMasterFromConfig();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Config error: " + ex.Message);
+        }
     }
+    
+
+    private async void LoadMasterFromConfig()
+    {
+        if (_config == null)
+            return;
+
+        var items = new List<Event>();
+        var connString = "Host=localhost;Username=postgres;Password=;Database=plaiurares";
+
+        using var conn = new NpgsqlConnection(connString);
+        await conn.OpenAsync();
+
+        using var cmd = new NpgsqlCommand(_config.Master.Query, conn);
+        using var reader = await cmd.ExecuteReaderAsync();
+
+        Console.WriteLine("Running query: " + _config.Master.Query);
+        Console.WriteLine("Reading master data...");
+
+        while (await reader.ReadAsync())
+        {
+            int id = -1;
+            string title = "";
+            DateTime date = DateTime.MinValue;
+
+            // ✅ Get ID safely regardless of type
+            object idValue = reader.GetValue(reader.GetOrdinal(_config.Master.IdField));
+            if (idValue is int intVal)
+            {
+                id = intVal;
+            }
+            else if (int.TryParse(idValue?.ToString(), out int parsedId))
+            {
+                id = parsedId;
+            }
+
+            // ✅ Get title/display safely
+            object displayValue = reader.GetValue(reader.GetOrdinal(_config.Master.DisplayField));
+            title = displayValue?.ToString() ?? "";
+
+            // ✅ Optional: get date safely if exists
+            if (HasColumn(reader, "date") && !reader.IsDBNull(reader.GetOrdinal("date")))
+            {
+                object dateValue = reader.GetValue(reader.GetOrdinal("date"));
+                if (dateValue is DateTime dt)
+                    date = dt;
+                else
+                    DateTime.TryParse(dateValue.ToString(), out date);
+            }
+
+            items.Add(new Event
+            {
+                Id = id,
+                Title = title,
+                Date = date
+            });
+        }
+
+        Console.WriteLine($"Total items loaded: {items.Count}");
+        EventsListBox.ItemsSource = items;
+    }
+
+
+    private bool HasColumn(NpgsqlDataReader reader, string columnName)
+    {
+        for (int i = 0; i < reader.FieldCount; i++)
+        {
+            if (reader.GetName(i).Equals(columnName, StringComparison.OrdinalIgnoreCase))
+                return true;
+        }
+        return false;
+    }
+
 
     private async void OnEventSelected(object? sender, SelectionChangedEventArgs e)
     {
-        if (EventsListBox.SelectedItem is Event selectedEvent)
+        if (_config == null || EventsListBox.SelectedItem is not Event selectedEvent)
+            return;
+
+        var detailItems = new List<string>(); // using string as a flexible display type
+        var connString = "Host=localhost;Username=postgres;Password=;Database=plaiurares";
+
+        using var conn = new NpgsqlConnection(connString);
+        await conn.OpenAsync();
+
+        string query = _config.Detail.Query;
+        using var cmd = new NpgsqlCommand(query, conn);
+        cmd.Parameters.AddWithValue("id", selectedEvent.Id);
+
+        using var reader = await cmd.ExecuteReaderAsync();
+
+        while (await reader.ReadAsync())
         {
-            Debug.WriteLine($"Selected event: {selectedEvent.Title} (ID: {selectedEvent.Id})");
+            var parts = new List<string>();
 
-            var registrations = await GetRegistrationsForEvent(selectedEvent.Id);
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                string column = reader.GetName(i);
+                object value = reader.IsDBNull(i) ? "NULL" : reader.GetValue(i);
+                parts.Add($"{column}: {value}");
+            }
 
-            Debug.WriteLine($"Found {registrations.Count} registrations");
-
-            RegistrationsListBox.ItemsSource = registrations;
+            detailItems.Add(string.Join(" | ", parts));
         }
+
+        RegistrationsListBox.ItemsSource = detailItems;
     }
+
 
     private async Task<List<Event>> GetEventsFromDatabase()
     {
@@ -221,5 +340,26 @@ public partial class MainWindow : Window
         ParticipantIdTextBox.Text = "";
         NewRegistrationDateTextBox.Text = "";
     }
+    
+    private async void OnLoadEventsConfig(object? sender, RoutedEventArgs e)
+    {
+        await LoadConfig("form_config.json");
+    }
+
+    private async void OnLoadOrganizersConfig(object? sender, RoutedEventArgs e)
+    {
+        await LoadConfig("form_config_organizers.json");
+    }
+    private async void OnLoadParticipantsConfig(object? sender, RoutedEventArgs e)
+    {
+        await LoadConfig("form_config_participants.json");
+    }
+
+    private async void OnLoadFeedbackConfig(object? sender, RoutedEventArgs e)
+    {
+        await LoadConfig("form_config_feedback.json");
+    }
+
+
 
 }

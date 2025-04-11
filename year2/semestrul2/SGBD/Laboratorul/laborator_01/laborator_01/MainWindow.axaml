@@ -4,36 +4,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         x:Class="laborator_01.MainWindow"
-        Title="Event List" Width="400" Height="400">
-        
-        
-        <StackPanel Margin="10">
-                <TextBlock Text="Events:" FontWeight="Bold" Margin="0,0,0,10"/>
-                <ListBox Name="EventsListBox" SelectionChanged="OnEventSelected" Height="150"/>
+        Title="Event List" Width="400" Height="500">
 
-                <TextBlock Text="Registrations:" FontWeight="Bold" Margin="20,20,0,10"/>
-                <ListBox Name="RegistrationsListBox" SelectionChanged="OnRegistrationSelected" Height="150"/>
+    <StackPanel Margin="10">
 
-                <TextBlock Text="Update Registration Date:" Margin="0,10,0,5"/>
-                <TextBox Name="RegistrationDateTextBox" Width="200"/>
-
-                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Spacing="10">
-                        <Button Content="Update" Click="OnUpdateClick"/>
-                        <Button Content="Delete" Click="OnDeleteClick"/>
-                </StackPanel>
-                
-                <TextBlock Text="Add Registration:" FontWeight="Bold" Margin="20,20,0,10"/>
-
-                <StackPanel Orientation="Vertical" Spacing="5">
-                        <TextBox Name="ParticipantIdTextBox" Watermark="Participant ID" Width="200"/>
-                        <TextBox Name="NewRegistrationDateTextBox" Watermark="Registration Date (yyyy-MM-dd)" Width="200"/>
-                        <Button Content="Add Registration" Click="OnAddRegistrationClick" Width="200"/>
-                </StackPanel>
+        <!-- Config Selection Section -->
+        <TextBlock Text="Choose Configuration:" FontWeight="Bold" Margin="0,0,0,10"/>
+        <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,0,0,20">
+            <Button Name="EventsConfigButton" Content="Events → Registrations" Click="OnLoadEventsConfig"/>
+            <Button Content="Participants → Registrations" Click="OnLoadParticipantsConfig"/>
+           
 
         </StackPanel>
-        
-        
 
+        <TextBlock Text="Events:" FontWeight="Bold" Margin="0,0,0,10"/>
+        <ListBox Name="EventsListBox" SelectionChanged="OnEventSelected" Height="150"/>
 
+        <TextBlock Text="Registrations:" FontWeight="Bold" Margin="20,20,0,10"/>
+        <ListBox Name="RegistrationsListBox" SelectionChanged="OnRegistrationSelected" Height="150"/>
 
+        <TextBlock Text="Update Registration Date:" Margin="0,10,0,5"/>
+        <TextBox Name="RegistrationDateTextBox" Width="200"/>
+
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Spacing="10">
+            <Button Content="Update" Click="OnUpdateClick"/>
+            <Button Content="Delete" Click="OnDeleteClick"/>
+        </StackPanel>
+                
+        <TextBlock Text="Add Registration:" FontWeight="Bold" Margin="20,20,0,10"/>
+        <StackPanel Orientation="Vertical" Spacing="5">
+            <TextBox Name="ParticipantIdTextBox" Watermark="Participant ID" Width="200"/>
+            <TextBox Name="NewRegistrationDateTextBox" Watermark="Registration Date (yyyy-MM-dd)" Width="200"/>
+            <Button Content="Add Registration" Click="OnAddRegistrationClick" Width="200"/>
+        </StackPanel>
+
+    </StackPanel>
 </Window>
