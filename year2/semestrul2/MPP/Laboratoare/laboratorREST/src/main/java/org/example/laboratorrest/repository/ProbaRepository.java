@@ -1,4 +1,7 @@
 package org.example.laboratorrest.repository;
 
-public class ProbaRepository {
+import org.example.laboratorrest.model.Proba;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProbaRepository extends JpaRepository<Proba, Long> {
 }
